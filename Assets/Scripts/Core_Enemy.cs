@@ -20,6 +20,7 @@ public class Core_Enemy : MonoBehaviour
 
     private void Awake()
     {
+        _target = GameManager.Player;
         damageToTarget = 1f;
         maxHealth = 100f;
     }
@@ -33,8 +34,6 @@ public class Core_Enemy : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Basic has " + health + " Health");
-
         MoveObject();
 
         if (Input.GetKeyDown(KeyCode.D))
@@ -80,7 +79,7 @@ public class Core_Enemy : MonoBehaviour
     {
         float distance = Vector3.Distance(gameObject.transform.position, _object.transform.position);
 
-        if (distance < visionRange && distance >= 2f)
+        if (distance < visionRange && distance >= 1.5f)
         {
             velocity = _object.transform.position - gameObject.transform.position;
         }
