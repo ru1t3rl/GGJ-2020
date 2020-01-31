@@ -312,10 +312,10 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -4, y: -4, z: -4}
+      - m_Value: {x: -5, y: -5, z: -5}
         m_Name: Min Velocity
         m_Overridden: 1
-      - m_Value: {x: 4, y: 4, z: 4}
+      - m_Value: {x: 5, y: 5, z: 5}
         m_Name: Max Velocity
         m_Overridden: 1
     m_Vector4f:
