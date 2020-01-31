@@ -494,11 +494,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1442644133}
-  playerSpeed: 0
+  playerSpeedParallel: 0
+  playerSpeedLateral: 0
   accelerationFactor: 0.3
   frictionFactor: 0.1
-  speedcap: 10
-  lowSpeedThreshold: 0.05
+  speedNullifyThreshold: 0.001
   moveDirection: {x: 0, y: 0, z: 0}
   rotationSpeed: 0.3
   rotationDirection: {x: 0, y: 0, z: 0}
