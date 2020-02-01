@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     static GameObject sCPU;
     [SerializeField] GameObject cPU;
 
+    [SerializeField] private float gameMusicLoudness = 0.01f;
     [SerializeField] private AudioClip GameMusic;
 
     [SerializeField] List<Room> rooms = new List<Room>();
@@ -34,9 +35,9 @@ public class GameManager : MonoBehaviour
     {
         sPlayer = player;
         sCPU = cPU;
-        AudioManager.Instance.SetMusicVolume(0.05f);
         AudioManager.Instance.PlayMusic(GameMusic);
-
+        AudioManager.Instance.SetMusicVolume(gameMusicLoudness);
+        
         for (int iType = 0; iType < enemyTypes.Count; iType++)
         {
             for (int iEnemy = 0; iEnemy < enemyAmount[iType]; iEnemy++)

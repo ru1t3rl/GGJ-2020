@@ -56,8 +56,7 @@ public class Gun : MonoBehaviour
 
             currentBullet++;
 
-            //AudioManager.Instance.SetSFXVolume(0.01f);
-            AudioManager.Instance.PlaySFX(FiringSound, 0.01f);
+            AudioManager.Instance.PlaySFX(FiringSound, 0.1f);
         }
         else
             gm.ShowWarning("Out of Ammo");

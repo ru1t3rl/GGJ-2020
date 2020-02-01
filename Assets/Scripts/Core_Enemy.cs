@@ -82,7 +82,7 @@ public class Core_Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            AudioManager.Instance.PlaySFX(DeathSound, 0.1f);
+            AudioManager.Instance.PlaySFX(DeathSound, 0.2f);
             deathParticlees.Play();
             Die();
             return;

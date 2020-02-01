@@ -570,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1540191871}
   cPU: {fileID: 1950264941}
+  gameMusicLoudness: 0.05
   GameMusic: {fileID: 8300000, guid: 1f7228cc40a2d464eb9c3d35c217ac02, type: 3}
   rooms:
   - {fileID: 508221139}
@@ -1073,8 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: eba21a380e863894faa34b3fb013acc6, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 112450964}
-  m_SkySettings: {fileID: 1117387517}
+  m_SkySettings: {fileID: 1546633532}
   m_SkySettingsFromProfile: {fileID: -2157376353241451359, guid: eba21a380e863894faa34b3fb013acc6,
     type: 2}
 --- !u!114 &616119623
@@ -2079,82 +2079,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1117387517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.14150941, g: 0.13683693, b: 0.13683693, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1 &1192104006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2487,88 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8056808114114776632}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1540191875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f48feb873d454cc42a9bde41ca0b7796,
+    type: 3}
+  m_PrefabInstance: {fileID: 654095939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1546633532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.14150941, g: 0.13683693, b: 0.13683693, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1 &1566616628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,16 +3292,12 @@ MonoBehaviour:
   rotationSpeed: 0.7
   accelerationFactor: 0.5
   speedNullifyThreshold: 0.001
-  playerSpeedParallel: 0
-  playerSpeedHeight: 0
-  playerSpeedLateral: 0
-  accelerationX: 0
-  accelerationY: 0
-  accelerationZ: 0
   moveDirection: {x: 0, y: 0, z: 0}
   rotationDirection: {x: 0, y: 0, z: 0}
+  playerSpeed: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
   jumpingPower: 20
-  maxSpeed: 0
+  maxSpeed: 11.38
 --- !u!143 &1950264944
 CharacterController:
   m_ObjectHideFlags: 0
