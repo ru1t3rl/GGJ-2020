@@ -85,14 +85,17 @@ public class GameManager : MonoBehaviour
 
     void LoadEnemies()
     {
-        for (int iEnemy = 0; iEnemy < enemiesInWave[currentWave]; iEnemy++)
+        if (currentWave < enemiesInWave.Count)
         {
-            PickEnemy();
-            BoxCollider collider = rooms[currentRoom].GetComponent<BoxCollider>();
-            activeEnemy[activeEnemy.Count - 1].transform.position = new Vector3(Random.Range(collider.transform.position.x - collider.size.x / 2, collider.transform.position.x + collider.size.x / 2),
-                                                                                Random.Range(collider.transform.position.y - collider.size.y / 2, collider.transform.position.y + collider.size.y / 2),
-                                                                                Random.Range(collider.transform.position.z - collider.size.z / 2, collider.transform.position.z + collider.size.z / 2));
-            activeEnemy[activeEnemy.Count - 1].SetActive(true);
+            for (int iEnemy = 0; iEnemy < enemiesInWave[currentWave]; iEnemy++)
+            {
+                PickEnemy();
+                BoxCollider collider = rooms[currentRoom].GetComponent<BoxCollider>();
+                activeEnemy[activeEnemy.Count - 1].transform.position = new Vector3(Random.Range(collider.transform.position.x - collider.size.x / 2, collider.transform.position.x + collider.size.x / 2),
+                                                                                    Random.Range(collider.transform.position.y - collider.size.y / 2, collider.transform.position.y + collider.size.y / 2),
+                                                                                    Random.Range(collider.transform.position.z - collider.size.z / 2, collider.transform.position.z + collider.size.z / 2));
+                activeEnemy[activeEnemy.Count - 1].SetActive(true);
+            }
         }
     }
 
