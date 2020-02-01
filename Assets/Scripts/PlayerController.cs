@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
     public new Camera camera;
 
-    const float hoverHeight = 1;
+    private float hoverHeight;
 
     public float rotationSpeed = 1, accelerationFactor = 10.0f, speedNullifyThreshold = 0.001f;
     [HideInInspector] public Vector3 moveDirection = Vector3.zero;
@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        characterController = GetComponent<CharacterController>();        
+        characterController = GetComponent<CharacterController>();
+        hoverHeight = characterController.transform.position.y;
     }
 
     // Update is called once per frame

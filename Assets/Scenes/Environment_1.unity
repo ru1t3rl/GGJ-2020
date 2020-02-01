@@ -230,7 +230,7 @@ BoxCollider:
   m_GameObject: {fileID: 91228790}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.505703, y: 2.87337, z: 4.680451}
   m_Center: {x: 0.20821762, y: 0.6682687, z: -0.8815291}
@@ -561,82 +561,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &465224444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 0
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.14150941, g: 0.13683693, b: 0.13683693, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 1
 --- !u!1 &486755945
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +697,7 @@ BoxCollider:
   m_GameObject: {fileID: 508221138}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.505703, y: 2.8733697, z: 4.680451}
   m_Center: {x: 0.20821762, y: 0.0365839, z: -0.8815291}
@@ -837,7 +761,7 @@ BoxCollider:
   m_GameObject: {fileID: 548381023}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.505703, y: 2.87337, z: 4.680451}
   m_Center: {x: 0.20821762, y: 0.6682687, z: -0.8815291}
@@ -963,11 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: eba21a380e863894faa34b3fb013acc6, type: 2}
   m_StaticLightingSkyUniqueID: 2
-<<<<<<< Updated upstream
-  m_SkySettings: {fileID: 465224444}
-=======
-  m_SkySettings: {fileID: 1546633532}
->>>>>>> Stashed changes
+  m_SkySettings: {fileID: 1020392677}
   m_SkySettingsFromProfile: {fileID: -2157376353241451359, guid: eba21a380e863894faa34b3fb013acc6,
     type: 2}
 --- !u!114 &616119623
@@ -1495,6 +1415,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901000339}
   m_CullTransparentMesh: 0
+--- !u!114 &1020392677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 0
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.14150941, g: 0.13683693, b: 0.13683693, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!1 &1021929742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,7 +2845,7 @@ BoxCollider:
   m_GameObject: {fileID: 1799894964}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.505703, y: 2.87337, z: 4.680451}
   m_Center: {x: 0.20821762, y: 0.6682687, z: -0.8815291}
@@ -3175,11 +3171,11 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.03, z: 0}
---- !u!114 &1950264945
+--- !u!114 &1950264946 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8056808116063658057, guid: 006e79b4a2bf89f4fae2fe46b2bd5699,
+    type: 3}
+  m_PrefabInstance: {fileID: 8056808114114776632}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950264941}
   m_Enabled: 1
@@ -3187,12 +3183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55290c75be5c65045ab703c40603ab13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 883538666}
-  gun: {fileID: 0}
-  scoreObject: {fileID: 1088441072}
-  healthObjectRed: {fileID: 1351848333}
-  healthObjectGreen: {fileID: 1743593800}
-  healthText: {fileID: 1071043364}
 --- !u!1 &2011266430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,6 +3344,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7877666200435930443, guid: 006e79b4a2bf89f4fae2fe46b2bd5699,
+        type: 3}
+      propertyPath: pl
+      value: 
+      objectReference: {fileID: 1950264946}
+    - target: {fileID: 7877666200435930443, guid: 006e79b4a2bf89f4fae2fe46b2bd5699,
+        type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 300256210}
+    - target: {fileID: 7877666200435930443, guid: 006e79b4a2bf89f4fae2fe46b2bd5699,
+        type: 3}
+      propertyPath: FiringSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f1184b86390c1044c8ebf9071c25d086, type: 3}
     - target: {fileID: 8056808116063658057, guid: 006e79b4a2bf89f4fae2fe46b2bd5699,
         type: 3}
       propertyPath: ammo
