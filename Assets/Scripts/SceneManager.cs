@@ -8,6 +8,11 @@ public class SceneManager : MonoBehaviour
         Application.Quit();
     }
 
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void StartGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(1);
