@@ -18,20 +18,9 @@ public class Core_Enemy : MonoBehaviour
     [Header("Target")]
     public GameObject _target;
 
-    [SerializeField] private float amplitude = 1f;
-    [SerializeField] private float frequentie = 0.1f;
-
-
-    public bool fixX = false;
-    public bool fixY = false;
-    public bool fixZ = false;
-
-    private float angle = 0.0f;
-    private Vector3 localScale = Vector3.zero;
-    [SerializeField] private Vector3 center = Vector3.zero;
-
     private void Awake()
     {
+        _target = GameManager.Player;
         damageToTarget = 1f;
         maxHealth = 100f;
     }
@@ -45,26 +34,7 @@ public class Core_Enemy : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Basic has " + health + " Health");
-
         MoveObject();
-
-        angle += frequentie;
-
-        if (!fixX)
-        {
-            velocity.x = (amplitude * Mathf.Sin(angle) + center.x);
-        }
-        if (!fixY)
-        {
-            velocity.y = (amplitude * Mathf.Sin(angle) + center.y);
-        }
-        if (!fixZ)
-        {
-            velocity.z = (amplitude * Mathf.Sin(angle) + center.z);
-        }
-
-        transform.localScale = localScale;
 
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -109,7 +79,7 @@ public class Core_Enemy : MonoBehaviour
     {
         float distance = Vector3.Distance(gameObject.transform.position, _object.transform.position);
 
-        if (distance < visionRange && distance >= 2f)
+        if (distance < visionRange && distance >= 1.5f)
         {
             velocity = _object.transform.position - gameObject.transform.position;
         }
