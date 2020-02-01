@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
         if (allDead)
         {
             currentRoom = (currentRoom < rooms.Count - 1) ? currentRoom + 1 : 0;
-            int prevRoom = currentRoom - 1;
-            if(prevRoom < 0)
+            int prevRoom = currentRoom - 2;
+            if (prevRoom < 0)
                 prevRoom = prevRoom + (rooms.Count - 1);
 
             rooms[prevRoom].door[0].SetActive(true);
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         this.warning.gameObject.SetActive(true);
         this.warning.text = warning;
 
-        StopCoroutine(warn);
+        try { StopCoroutine(warn); } catch (System.NullReferenceException) { }
         warn = StartCoroutine(Warn());
     }
 

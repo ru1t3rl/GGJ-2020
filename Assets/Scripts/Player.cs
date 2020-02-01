@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    int score;
-    float health;
+    int score = 0;
+    float health = 100;
 
     [SerializeField] TextMeshProUGUI ammo;
     public Gun gun;
@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         healthObjectRed.transform.localScale = new Vector3(healthObjectGreen.transform.localScale.x * (health/100), healthObjectRed.transform.localScale.y, healthObjectRed.transform.localScale.z);
+        healthText.text = health.ToString();
         ammo.text = gun.Ammo.ToString();
     }
 
