@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Bullet>() == null && !disabling)
+        if (other.GetComponent<Bullet>() == null && !disabling && !other.CompareTag("Player"))
         {
             speed = 0;
 
@@ -66,6 +66,13 @@ public class Bullet : MonoBehaviour
 
             PlayImpact();
             StartCoroutine(Disable());
+        }
+
+        if (other.CompareTag("Enemy"))
+        {
+            if (other.GetComponent<Core_Enemy>() != null) {
+                other.GetComponent<Core_Enemy>().TakeDamage(20);
+            }
         }
     }
 
