@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
 
     public virtual void Start()
     {
+        Cursor.visible = false;
         bullets = new List<Bullet>();
         for (int iBullet = 0; iBullet < maxBullets; iBullet++)
         {
@@ -54,6 +55,8 @@ public class Gun : MonoBehaviour
         else
             Debug.LogError("Out of Ammo");
     }
+
+    public int Ammo { get => maxBullets - currentBullet; }
 
     public void Reload()
     {

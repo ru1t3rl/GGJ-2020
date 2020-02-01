@@ -24,7 +24,7 @@ public class Room : MonoBehaviour
         else
         {
             door[0].SetActive(false);
-            door[1].SetActive(true);
+            //door[1].SetActive(true);
         }
 
         if (dissolving)
@@ -34,7 +34,7 @@ public class Room : MonoBehaviour
             {
                 dissolving = false;
                 rend.material.SetFloat("_DissolveValue", 0);
-                door[0].SetActive(true);
+                //door[0].SetActive(true);
                 door[1].SetActive(false);
             }
         }
