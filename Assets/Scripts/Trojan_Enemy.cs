@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.VFX;
 
 public class Trojan_Enemy : Core_Enemy
 {
@@ -10,6 +11,10 @@ public class Trojan_Enemy : Core_Enemy
 
     private void Awake()
     {
+        rend = GetComponent<Renderer>();
+        col = GetComponent<Collider>();
+
+        deathParticlees.Stop();
         _target = GameManager.CPU;
         SetMaxHealth(50f);   
     }
@@ -62,7 +67,7 @@ public class Trojan_Enemy : Core_Enemy
     {
         base.Die();
 
-        Instantiate(trojans, gameObject.transform.position + spawnTrojanOffset, Quaternion.identity);
-        Instantiate(trojans, gameObject.transform.position + (spawnTrojanOffset * -1), Quaternion.identity);
+        Instantiate(trojans, gameObject.transform.localPosition + spawnTrojanOffset, Quaternion.identity);
+        Instantiate(trojans, gameObject.transform.localPosition + (spawnTrojanOffset * -1), Quaternion.identity);
     }
 }

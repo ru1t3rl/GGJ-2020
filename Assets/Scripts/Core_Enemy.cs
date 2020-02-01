@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.VFX;
 
 public class Core_Enemy : MonoBehaviour
 {
@@ -18,8 +19,16 @@ public class Core_Enemy : MonoBehaviour
     [Header("Target")]
     public GameObject _target;
 
+    public Renderer rend;
+    public Collider col;
+    public VisualEffect deathParticlees;
+
     private void Awake()
     {
+        rend = GetComponent<Renderer>();
+        col = GetComponent<Collider>();
+
+        deathParticlees.Stop();
         _target = GameManager.Player;
         damageToTarget = 1f;
         maxHealth = 100f;
@@ -69,13 +78,16 @@ public class Core_Enemy : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            deathParticlees.Play();
             return;
         }
     }
 
     public virtual void Die()
     {
-        gameObject.SetActive(false);
+        col.enabled = false;
+        rend.enabled = false;
+        StartCoroutine(Disable(3));
     }
 
     public virtual void TrackTarget(GameObject _object)
@@ -101,5 +113,13 @@ public class Core_Enemy : MonoBehaviour
     {
         maxHealth = _maxHealth;
         return maxHealth;
+    }
+
+    IEnumerator Disable(float time)
+    {
+        yield return new WaitForSeconds(time);
+        col.enabled = true;
+        rend.enabled = true;
+        gameObject.SetActive(false);
     }
 }
