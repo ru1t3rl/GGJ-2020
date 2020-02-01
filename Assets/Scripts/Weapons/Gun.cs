@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour
 
     [SerializeField] float force;
     [SerializeField] private AudioClip FiringSound;
+    [SerializeField] GameManager gm;
 
     public virtual void Start()
     {
@@ -45,7 +46,7 @@ public class Gun : MonoBehaviour
     {
         if (currentBullet < maxBullets)
         {
-            bullets[currentBullet].position = transform.position;
+            bullets[currentBullet].position = transform.position + transform.forward * (transform.localScale.z / 2);
             bullets[currentBullet].direction = Camera.main.transform.forward;
             bullets[currentBullet].rotation = transform.rotation;
 
@@ -57,7 +58,7 @@ public class Gun : MonoBehaviour
             AudioManager.Instance.PlaySFX(FiringSound, 0.01f);
         }
         else
-            Debug.LogError("Out of Ammo");
+            gm.ShowWarning("Out of Ammo");
     }
 
     public int Ammo { get => maxBullets - currentBullet; }
