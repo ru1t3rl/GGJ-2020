@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         sCPU = cPU;
         AudioManager.Instance.PlayMusic(GameMusic);
         AudioManager.Instance.SetMusicVolume(gameMusicLoudness);
-        
+
         for (int iType = 0; iType < enemyTypes.Count; iType++)
         {
             for (int iEnemy = 0; iEnemy < enemyAmount[iType]; iEnemy++)
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         rooms[currentRoom].passed = allDead;
         doSomething();
 
-        for(int iGobj = activeEnemy.Count; iGobj-- > 0;)
+        for (int iGobj = activeEnemy.Count; iGobj-- > 0;)
         {
             if (!activeEnemy[iGobj].activeSelf)
                 activeEnemy.RemoveAt(iGobj);
@@ -70,6 +70,13 @@ public class GameManager : MonoBehaviour
         if (allDead)
         {
             currentRoom = (currentRoom < rooms.Count - 1) ? currentRoom + 1 : 0;
+            int prevRoom = currentRoom - 1;
+            if(prevRoom < 0)
+                prevRoom = prevRoom + (rooms.Count - 1);
+
+            rooms[prevRoom].door[0].SetActive(true);
+            rooms[prevRoom].door[1].SetActive(true);
+
             currentWave++;
             LoadEnemies();
             allDead = false;
