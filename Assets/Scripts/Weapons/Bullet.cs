@@ -67,6 +67,11 @@ public class Bullet : MonoBehaviour
             PlayImpact();
             StartCoroutine(Disable());
         }
+
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<Core_Enemy>().TakeDamage(20);
+        }
     }
 
     IEnumerator Disable()
