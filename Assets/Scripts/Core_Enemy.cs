@@ -42,7 +42,7 @@ public class Core_Enemy : MonoBehaviour
     private void Start()
     {
         visionRange = 25f;
-        maxSpeed = 10f;
+        maxSpeed = 7f;
         health = maxHealth;
 
         disabled = false;
@@ -54,15 +54,6 @@ public class Core_Enemy : MonoBehaviour
     {
         MoveObject();
     }
-
-    //void Truncate(ref Vector3 velocity, float maxSpeed)
-    //{
-    //    if(velocity.magnitude > maxSpeed)
-    //    {
-    //        velocity.Normalize();
-    //        velocity *= maxSpeed;
-    //    }
-    //}
 
     public virtual void MoveObject()
     {

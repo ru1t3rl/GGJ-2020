@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: 54da1c86d41c8ad47ac8f9023aefc1f5
+guid: f48feb873d454cc42a9bde41ca0b7796
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ElectronMaterial.001
-    second: {fileID: 2100000, guid: bbebd8918093f4443b6f68826ad77b56, type: 2}
+      74: -8945691123924629249
+    second: Armature|Idle
+  - first:
+      74: -4274770991410265338
+    second: Armature|Walking
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -28,7 +29,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -39,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 30
+    globalScale: 0.25
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -86,13 +87,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.29999998
-    rootMotionBoneName: 
+    globalScale: 0.25
+    rootMotionBoneName: Spine
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

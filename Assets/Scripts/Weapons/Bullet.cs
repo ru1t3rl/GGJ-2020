@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Bullet>() == null && !disabling)
+        if (other.GetComponent<Bullet>() == null && !disabling && !other.CompareTag("Player"))
         {
             speed = 0;
 
