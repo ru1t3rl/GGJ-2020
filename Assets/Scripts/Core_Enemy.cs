@@ -76,8 +76,8 @@ public class Core_Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            Die();
             deathParticlees.Play();
+            Die();
             return;
         }
     }
