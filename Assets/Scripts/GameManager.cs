@@ -10,10 +10,14 @@ public class GameManager : MonoBehaviour
     static GameObject sCPU;
     [SerializeField] GameObject cPU;
 
+    [SerializeField] private AudioClip GameMusic;
+
     private void Awake()
     {
         sPlayer = player;
         sCPU = cPU;
+        AudioManager.Instance.SetMusicVolume(0.05f);
+        AudioManager.Instance.PlayMusic(GameMusic);
     }
 
     public static GameObject Player { get => sPlayer; }

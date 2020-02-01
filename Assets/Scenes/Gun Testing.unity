@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 611662799100155885, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: DeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b89ebd3867e4b14a8262c66d0cd7735, type: 3}
     - target: {fileID: 611662799100155886, guid: 40a5f40e70d713f43bcafd0d6debb854,
         type: 3}
       propertyPath: m_Name
@@ -794,6 +799,7 @@ MonoBehaviour:
   bullet: {fileID: 2746351189304137442, guid: 7c5fa30c5491d0445985faf462ba88c5, type: 3}
   maxBullets: 100
   force: 75
+  FiringSound: {fileID: 8300000, guid: f1184b86390c1044c8ebf9071c25d086, type: 3}
 --- !u!4 &1151846559
 Transform:
   m_ObjectHideFlags: 0
@@ -874,6 +880,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrojanEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2347800866454902248, guid: 46f9305e17e0a8849b59f66f49270cbe,
+        type: 3}
+      propertyPath: TrojanDeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5839d4e443276294ea2ce29050df3d64, type: 3}
+    - target: {fileID: 2347800866454902248, guid: 46f9305e17e0a8849b59f66f49270cbe,
+        type: 3}
+      propertyPath: DeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5839d4e443276294ea2ce29050df3d64, type: 3}
     - target: {fileID: 2347800866454902252, guid: 46f9305e17e0a8849b59f66f49270cbe,
         type: 3}
       propertyPath: m_LocalPosition.x

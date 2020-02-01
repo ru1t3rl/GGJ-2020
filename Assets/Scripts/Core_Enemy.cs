@@ -26,6 +26,8 @@ public class Core_Enemy : MonoBehaviour
 
     public bool disabled;
 
+    [SerializeField] private AudioClip DeathSound;
+
     private void Awake()
     {
         rend = GetComponent<Renderer>();
@@ -79,6 +81,7 @@ public class Core_Enemy : MonoBehaviour
 
         if(health <= 0)
         {
+            AudioManager.Instance.PlaySFX(DeathSound, 0.1f);
             deathParticlees.Play();
             Die();
             return;

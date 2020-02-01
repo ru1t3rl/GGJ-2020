@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     int currentBullet;
 
     [SerializeField] float force;
+    [SerializeField] private AudioClip FiringSound;
 
     public virtual void Start()
     {
@@ -50,6 +51,9 @@ public class Gun : MonoBehaviour
             bullets[currentBullet].gameObject.SetActive(true);
 
             currentBullet++;
+
+            //AudioManager.Instance.SetSFXVolume(0.01f);
+            AudioManager.Instance.PlaySFX(FiringSound, 0.01f);
         }
         else
             Debug.LogError("Out of Ammo");
