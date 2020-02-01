@@ -191,7 +191,7 @@ Material:
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
-    - _SpeedMax: 14.9
+    - _SpeedMax: 19
     - _SpeedMin: 1.93
     - _SrcBlend: 1
     - _StencilRef: 2

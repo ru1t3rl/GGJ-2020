@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        healthObjectRed.transform.localScale = new Vector3(healthObjectGreen.transform.localScale.x * (health/100), healthObjectRed.transform.localScale.y, healthObjectRed.transform.localScale.z);
+        healthObjectGreen.transform.localScale = new Vector3(healthObjectRed.transform.localScale.x * (health / 100), healthObjectGreen.transform.localScale.y, healthObjectGreen.transform.localScale.z);
         healthText.text = health.ToString();
         ammo.text = gun.Ammo.ToString();
     }
