@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private AudioClip GameMusic;
 
-    private void Awake()
     [SerializeField] List<Room> rooms = new List<Room>();
     int currentRoom = 0;
 
