@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public float jumpingPower = 20;
     private bool isJumping = false, isFalling = false;
 
-    public float maxSpeed = 20;
+    public float maxSpeed;
     #endregion
 
     // Start is called before the first frame update
@@ -32,7 +32,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HoverMovement();
+        if (!PauseMenuScript.Paused)
+        {
+            HoverMovement();
+        }
     }
 
     void HoverMovement()
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             acceleration.z = 0;
-            playerSpeed.z *= 0.95f; // Dirty
+            playerSpeed.z *= 0.9f; // Dirty
         }
 
         // Lateral Movement / Strafing
@@ -56,7 +59,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             acceleration.x = 0;
-            playerSpeed.x *= 0.95f; // Dirty
+            playerSpeed.x *= 0.9f; // Dirty
         }
 
         // Jump Mechanic
@@ -85,13 +88,17 @@ public class PlayerController : MonoBehaviour
 
         playerSpeed += acceleration;
 
-        if (playerSpeed.magnitude > maxSpeed)
-            playerSpeed = playerSpeed.normalized * maxSpeed;
-
         if (playerSpeed.x < speedNullifyThreshold && playerSpeed.x > -speedNullifyThreshold)
             playerSpeed.x = 0;
         if (playerSpeed.z < speedNullifyThreshold && playerSpeed.z > -speedNullifyThreshold)
             playerSpeed.z = 0;
+
+
+        if (playerSpeed.magnitude > maxSpeed)
+        {
+            playerSpeed.Normalize();
+            playerSpeed *= maxSpeed;
+        }
 
 
         moveDirection = playerSpeed;
