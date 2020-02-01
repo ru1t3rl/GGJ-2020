@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991699508318405736}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1.35, z: 0}
+  m_LocalPosition: {x: -0, y: 1.41, z: 0}
   m_LocalScale: {x: 197.05045, y: 58.82362, z: 100}
   m_Children: []
   m_Father: {fileID: 649066311630030222}
@@ -321,9 +321,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 649066311630030222}
+  - component: {fileID: 8231983188956814014}
+  - component: {fileID: 7222021997581265146}
   m_Layer: 0
   m_Name: Ammo Box
-  m_TagString: Untagged
+  m_TagString: AmmoBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -336,8 +338,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4565149772695435165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.893034, y: 0.9101782, z: 8.897091}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.893034, y: 0.08, z: 8.897091}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 2118977078109186504}
   - {fileID: 169713621841300606}
@@ -346,3 +348,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8231983188956814014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4565149772695435165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e9b65a2479f234d960178dd3e63142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7222021997581265146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4565149772695435165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.3453093, y: 2.8074355, z: 1.5821686}
+  m_Center: {x: 0.015310764, y: 0.61717296, z: 0.103645325}
