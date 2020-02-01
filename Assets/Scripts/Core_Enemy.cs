@@ -55,6 +55,16 @@ public class Core_Enemy : MonoBehaviour
         MoveObject();
     }
 
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Player pl = collision.collider.GetComponent<Player>();
+        if(pl != null)
+        {
+            pl.DoDamage(10);
+        }
+    }
+
     public virtual void MoveObject()
     {
         if (_target != null)

@@ -7,4 +7,9 @@ public class SceneManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void StartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(1);
+    }
 }

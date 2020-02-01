@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     public float jumpingPower = 20;
     private bool isJumping = false, isFalling = false;
+
+    public float maxSpeed;
     #endregion
 
     // Start is called before the first frame update

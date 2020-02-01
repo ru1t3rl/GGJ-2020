@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<int> enemiesInWave = new List<int>();
     int currentWave = 0;
 
-    [SerializeField] TextMeshPro warning;
+    [SerializeField] TextMeshProUGUI warning;
     Coroutine warn;
     [SerializeField] float warningDuration;
 
@@ -101,7 +101,9 @@ public class GameManager : MonoBehaviour
     {
         this.warning.gameObject.SetActive(true);
         this.warning.text = warning;
-        Warn();
+
+        StopCoroutine(warn);
+        warn = StartCoroutine(Warn());
     }
 
     public IEnumerator Warn()

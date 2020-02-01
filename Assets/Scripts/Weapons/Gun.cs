@@ -14,6 +14,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private AudioClip FiringSound;
     [SerializeField] GameManager gm;
 
+    public Player pl;
+
     public virtual void Start()
     {
         Cursor.visible = false;
