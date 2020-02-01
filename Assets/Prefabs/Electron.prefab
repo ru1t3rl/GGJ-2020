@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3966274027041898483}
   - component: {fileID: 5354797040335291845}
   - component: {fileID: 1831987456970619196}
+  - component: {fileID: 7607667219012346847}
+  - component: {fileID: 4484159904952490232}
   m_Layer: 0
   m_Name: Electron
   m_TagString: Untagged
@@ -78,3 +80,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7607667219012346847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94664577188777440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e93b079d864c384cbaaa579309ebc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  rotationSpeed: 1
+  accelerationFactor: 10
+  speedNullifyThreshold: 0.001
+  playerSpeedParallel: 0
+  playerSpeedHeight: 0
+  playerSpeedLateral: 0
+  accelerationX: 0
+  accelerationY: 0
+  accelerationZ: 0
+  moveDirection: {x: 0, y: 0, z: 0}
+  rotationDirection: {x: 0, y: 0, z: 0}
+  jumpingPower: 20
+--- !u!114 &4484159904952490232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94664577188777440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991be19358bc3c644aa5919f6ce4b1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
