@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     float health;
 
     [SerializeField] TextMeshProUGUI ammo;
-    [SerializeField] Gun gun;
+    public Gun gun;
 
     [SerializeField] TextMeshProUGUI scoreObject;
 
