@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
             bullets.Add(Instantiate(bullet).GetComponent<Bullet>());
             bullets[bullets.Count - 1].parent = this.gameObject;
             bullets[bullets.Count - 1].force = force;
-            bullets[bullets.Count - 1].hideFlags = HideFlags.HideInHierarchy;
+            bullets[bullets.Count - 1].gameObject.hideFlags = HideFlags.HideInHierarchy;
             bullets[bullets.Count - 1].gameObject.SetActive(false);
         }
 

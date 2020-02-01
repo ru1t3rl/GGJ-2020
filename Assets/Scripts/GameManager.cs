@@ -10,10 +10,20 @@ public class GameManager : MonoBehaviour
     static GameObject sCPU;
     [SerializeField] GameObject cPU;
 
-    private void Awake()
+    [SerializeField] List<Room> rooms = new List<Room>();
+    int currentRoom = 0;
+
+    bool allDead;
+
+    void Awake()
     {
         sPlayer = player;
         sCPU = cPU;
+    }
+
+    void Update()
+    {
+        rooms[currentRoom].passed = allDead;
     }
 
     public static GameObject Player { get => sPlayer; }
