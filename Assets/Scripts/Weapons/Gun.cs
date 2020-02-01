@@ -15,6 +15,8 @@ public class Gun : MonoBehaviour
     [SerializeField] GameManager gm;
     [SerializeField] private VisualEffect muzzleflash;
 
+    public float damage;
+
     public Player pl;
 
     public virtual void Start()

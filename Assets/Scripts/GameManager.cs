@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    static GameObject sPlayer;
+    public static GameObject sPlayer;
     [SerializeField] GameObject player;
 
     static GameObject sCPU;
@@ -31,9 +31,12 @@ public class GameManager : MonoBehaviour
     Coroutine warn;
     [SerializeField] float warningDuration;
 
+    public static Player pl;
+
     void Awake()
     {
         sPlayer = player;
+        pl = player.GetComponent<Player>();
         sCPU = cPU;
         AudioManager.Instance.PlayMusic(GameMusic);
         AudioManager.Instance.SetMusicVolume(gameMusicLoudness);

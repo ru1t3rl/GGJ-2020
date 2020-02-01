@@ -6,7 +6,7 @@ using UnityEngine.Experimental.VFX;
 public class Core_Enemy : MonoBehaviour
 {
     [Header("General")]
-    private float maxHealth;
+    protected float maxHealth;
     [HideInInspector] public float health;
     public int scoreWorth;
 
@@ -28,29 +28,17 @@ public class Core_Enemy : MonoBehaviour
 
     [SerializeField] private AudioClip DeathSound;
 
-    private void Awake()
+    public virtual void Awake()
     {
         rend = GetComponent<Renderer>();
         col = GetComponent<Collider>();
 
         deathParticlees.Stop();
         _target = GameManager.Player;
-        damageToTarget = 1f;
         maxHealth = 100f;
     }
 
-    private void Start()
-    {
-        visionRange = 25f;
-        maxSpeed = 7f;
-        health = maxHealth;
-
-        disabled = false;
-
-        scoreWorth = 50;
-    }
-
-    private void Update()
+    public virtual void Update()
     {
         MoveObject();
     }
