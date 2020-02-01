@@ -8,6 +8,7 @@ public class Core_Enemy : MonoBehaviour
     [Header("General")]
     private float maxHealth;
     [HideInInspector] public float health;
+    public int scoreWorth;
 
     public float damageToTarget;
 
@@ -43,6 +44,8 @@ public class Core_Enemy : MonoBehaviour
         health = maxHealth;
 
         disabled = false;
+
+        scoreWorth = 50;
     }
 
     private void Update()

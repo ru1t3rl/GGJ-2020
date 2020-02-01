@@ -28,6 +28,8 @@ public class Trojan_Enemy : Core_Enemy
         health = GetMaxhealth();
 
         disabled = false;
+
+        scoreWorth = 100;
     }
 
     // Update is called once per frame
@@ -65,7 +67,9 @@ public class Trojan_Enemy : Core_Enemy
         base.Die();
         disabled = true;
 
-        Instantiate(trojans, gameObject.transform.localPosition + spawnTrojanOffset, Quaternion.identity);
-        Instantiate(trojans, gameObject.transform.localPosition + (spawnTrojanOffset * -1), Quaternion.identity);
+        for (int i = 0; i < Random.Range(1, 3); i++)
+        {
+            Instantiate(trojans, gameObject.transform.localPosition + spawnTrojanOffset, Quaternion.identity);
+        }
     }
 }
