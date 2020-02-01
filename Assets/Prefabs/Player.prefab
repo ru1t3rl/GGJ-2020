@@ -281,15 +281,12 @@ MonoBehaviour:
   rotationSpeed: 0.7
   accelerationFactor: 1
   speedNullifyThreshold: 0.001
-  playerSpeedParallel: 0
-  playerSpeedHeight: 0
-  playerSpeedLateral: 0
-  accelerationX: 0
-  accelerationY: 0
-  accelerationZ: 0
   moveDirection: {x: 0, y: 0, z: 0}
   rotationDirection: {x: 0, y: 0, z: 0}
+  playerSpeed: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
   jumpingPower: 20
+  maxSpeed: 20
 --- !u!114 &8056808116063658057
 MonoBehaviour:
   m_ObjectHideFlags: 0

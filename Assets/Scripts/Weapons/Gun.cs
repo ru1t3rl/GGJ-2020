@@ -13,11 +13,14 @@ public class Gun : MonoBehaviour
     [SerializeField] float force;
     [SerializeField] private AudioClip FiringSound;
     [SerializeField] GameManager gm;
+    [SerializeField] private VisualEffect muzzleflash;
 
     public Player pl;
 
     public virtual void Start()
     {
+        muzzleflash.Stop();
+
         Cursor.visible = false;
         bullets = new List<Bullet>();
         for (int iBullet = 0; iBullet < maxBullets; iBullet++)
@@ -56,6 +59,7 @@ public class Gun : MonoBehaviour
 
             currentBullet++;
 
+            muzzleflash.Play();
             AudioManager.Instance.PlaySFX(FiringSound, 0.1f);
         }
         else
