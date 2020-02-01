@@ -16,23 +16,26 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePosition = Input.mousePosition;
-        Vector2 rotation = Vector2.zero;
-
-        if (!freeze_y)
+        if (!PauseMenuScript.Paused)
         {
-            //rotation.x = (Screen.height/2 - mousePosition.y) * sensetivity.x * Mathf.Deg2Rad;
-            rotation.x = Input.GetAxis("Mouse X") * sensetivity.x * Mathf.Deg2Rad;
-        }
-        if (!freeze_x)
-        {
-            //rotation.y = (Screen.width/2 - mousePosition.x) * sensetivity.y * Mathf.Deg2Rad;
-            rotation.y = Input.GetAxis("Mouse Y") * sensetivity.y * Mathf.Deg2Rad;
-        }
+            Vector2 mousePosition = Input.mousePosition;
+            Vector2 rotation = Vector2.zero;
 
-        transform.Rotate(Vector3.up, rotation.x*10f);
-        transform.Rotate(Vector3.right, -rotation.y * 10f);
+            if (!freeze_y)
+            {
+                //rotation.x = (Screen.height/2 - mousePosition.y) * sensetivity.x * Mathf.Deg2Rad;
+                rotation.x = Input.GetAxis("Mouse X") * sensetivity.x * Mathf.Deg2Rad;
+            }
+            if (!freeze_x)
+            {
+                //rotation.y = (Screen.width/2 - mousePosition.x) * sensetivity.y * Mathf.Deg2Rad;
+                rotation.y = Input.GetAxis("Mouse Y") * sensetivity.y * Mathf.Deg2Rad;
+            }
 
-        mousePosition = new Vector2(Screen.width/2, Screen.height/2);
+            transform.Rotate(Vector3.up, rotation.x * 10f);
+            transform.Rotate(Vector3.right, -rotation.y * 10f);
+
+            mousePosition = new Vector2(Screen.width / 2, Screen.height / 2);
+        }
     }
 }

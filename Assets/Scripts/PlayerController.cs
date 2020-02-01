@@ -32,7 +32,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HoverMovement();
+        if (!PauseMenuScript.Paused)
+        {
+            HoverMovement();
+        }
     }
 
     void HoverMovement()
