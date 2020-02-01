@@ -27,14 +27,19 @@ public class PauseMenuScript : MonoBehaviour
         {
             paused = true;
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             PauseMenu.SetActive(true);
         }
     }
 
     public void Resume()
     {
+        Debug.Log("Game Resumed");
         paused = false;
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         PauseMenu.SetActive(false);
     }
 
@@ -42,6 +47,8 @@ public class PauseMenuScript : MonoBehaviour
     {
         paused = false;
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Main Menu");
     }
 
@@ -49,6 +56,8 @@ public class PauseMenuScript : MonoBehaviour
     {
         paused = false;
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
