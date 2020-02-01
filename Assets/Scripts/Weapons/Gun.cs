@@ -34,13 +34,16 @@ public class Gun : MonoBehaviour
 
     public virtual void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (!PauseMenuScript.Paused)
         {
-            Shoot();
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reload();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+            }
         }
     }
 
