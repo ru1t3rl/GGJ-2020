@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float gameMusicLoudness = 0.01f;
     [SerializeField] private AudioClip GameMusic;
+    [SerializeField] private AudioClip DoorOpeningSFX;
 
     [SerializeField] List<Room> rooms = new List<Room>();
     int currentRoom = 0;
@@ -76,6 +77,8 @@ public class GameManager : MonoBehaviour
 
             rooms[prevRoom].door[0].SetActive(true);
             rooms[prevRoom].door[1].SetActive(true);
+
+            AudioManager.Instance.PlaySFX(DoorOpeningSFX, 2);
 
             currentWave++;
             LoadEnemies();

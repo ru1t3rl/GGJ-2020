@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AmmoBoxCollidingScript : MonoBehaviour
 {
+    [SerializeField] private AudioClip PickupSFX;
+
     private void Start()
     {
         gameObject.SetActive(true);
@@ -14,6 +16,7 @@ public class AmmoBoxCollidingScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("AMMMMOOOOOO");
+            AudioManager.Instance.PlaySFX(PickupSFX);
             other.GetComponent<Player>().gun.Reload();
             gameObject.SetActive(false);
         }
