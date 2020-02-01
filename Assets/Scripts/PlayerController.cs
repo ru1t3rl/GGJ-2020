@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
         characterController.Move(moveDirection * Time.deltaTime);
 
-        rotationDirection = new Vector3(0.0f, Input.GetAxis("Mouse X") * rotationSpeed, 0.0f);
+        rotationDirection = new Vector3(0.0f , Input.GetAxis("Mouse X") * rotationSpeed, 0.0f);
         characterController.transform.Rotate(rotationDirection);
     }
 }

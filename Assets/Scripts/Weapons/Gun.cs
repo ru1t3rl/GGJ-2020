@@ -44,7 +44,7 @@ public class Gun : MonoBehaviour
         if (currentBullet < maxBullets)
         {
             bullets[currentBullet].position = transform.position;
-            bullets[currentBullet].direction = transform.forward;
+            bullets[currentBullet].direction = Camera.main.transform.forward;
             bullets[currentBullet].rotation = transform.rotation;
 
             bullets[currentBullet].gameObject.SetActive(true);

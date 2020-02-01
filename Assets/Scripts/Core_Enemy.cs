@@ -28,7 +28,7 @@ public class Core_Enemy : MonoBehaviour
     private void Start()
     {
         visionRange = 25f;
-        maxSpeed = 10f;
+        maxSpeed = 7f;
         health = maxHealth;
     }
 
@@ -42,19 +42,9 @@ public class Core_Enemy : MonoBehaviour
         }
     }
 
-    //void Truncate(ref Vector3 velocity, float maxSpeed)
-    //{
-    //    if(velocity.magnitude > maxSpeed)
-    //    {
-    //        velocity.Normalize();
-    //        velocity *= maxSpeed;
-    //    }
-    //}
-
     public virtual void MoveObject()
     {
         TrackTarget(_target);
-        //Truncate(ref velocity, maxSpeed);
         velocity = velocity.normalized * maxSpeed;
         this.gameObject.transform.position += velocity * Time.deltaTime;
     }
