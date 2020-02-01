@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public void DoDamage(float damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
         }
@@ -46,3 +46,4 @@ public class Player : MonoBehaviour
         scoreObject.text = iets;
     }
 }
+
