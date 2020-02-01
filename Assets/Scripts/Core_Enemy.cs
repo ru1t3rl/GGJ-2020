@@ -23,6 +23,8 @@ public class Core_Enemy : MonoBehaviour
     public Collider col;
     public VisualEffect deathParticlees;
 
+    public bool disabled;
+
     private void Awake()
     {
         rend = GetComponent<Renderer>();
@@ -39,16 +41,13 @@ public class Core_Enemy : MonoBehaviour
         visionRange = 25f;
         maxSpeed = 10f;
         health = maxHealth;
+
+        disabled = false;
     }
 
     private void Update()
     {
         MoveObject();
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            TakeDamage(10f);
-        }
     }
 
     //void Truncate(ref Vector3 velocity, float maxSpeed)
@@ -87,6 +86,7 @@ public class Core_Enemy : MonoBehaviour
     {
         col.enabled = false;
         rend.enabled = false;
+        disabled = true;
         StartCoroutine(Disable(3));
     }
 
@@ -94,7 +94,7 @@ public class Core_Enemy : MonoBehaviour
     {
         float distance = Vector3.Distance(gameObject.transform.position, _object.transform.position);
 
-        if (distance < visionRange && distance >= 1.5f)
+        if (distance < visionRange && distance >= 1.5f && !disabled)
         {
             velocity = _object.transform.position - gameObject.transform.position;
         }

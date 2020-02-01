@@ -113,6 +113,8 @@ MonoBehaviour:
   maxSpeed: 0
   visionRange: 0
   _target: {fileID: 0}
+  rend: {fileID: 0}
+  col: {fileID: 0}
   deathParticlees: {fileID: 7767177344728420636}
   trojans: {fileID: 611662799100155886, guid: 40a5f40e70d713f43bcafd0d6debb854, type: 3}
 --- !u!54 &-2906258015160664286

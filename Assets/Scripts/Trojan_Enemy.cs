@@ -26,6 +26,8 @@ public class Trojan_Enemy : Core_Enemy
         maxSpeed = 5f;
         visionRange = 100f;
         health = GetMaxhealth();
+
+        disabled = false;
     }
 
     // Update is called once per frame
@@ -33,11 +35,6 @@ public class Trojan_Enemy : Core_Enemy
     {
         MoveObject();
         GoalReached();
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            TakeDamage(10f);
-        }
     }
 
     public override void MoveObject()
@@ -52,7 +49,7 @@ public class Trojan_Enemy : Core_Enemy
 
     public void GoalReached()
     {
-        if (_target != null)
+        if (_target != null && !disabled)
         {
             float distance = Vector3.Distance(gameObject.transform.position, _target.transform.position);
 
@@ -66,6 +63,7 @@ public class Trojan_Enemy : Core_Enemy
     public override void Die()
     {
         base.Die();
+        disabled = true;
 
         Instantiate(trojans, gameObject.transform.localPosition + spawnTrojanOffset, Quaternion.identity);
         Instantiate(trojans, gameObject.transform.localPosition + (spawnTrojanOffset * -1), Quaternion.identity);

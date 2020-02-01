@@ -198,6 +198,116 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2185043261111108822, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Name
+      value: Max Velocity
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Name
+      value: Min Velocity
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.z
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: Drag
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Name
+      value: Max Life Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Name
+      value: Min Life Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617844721368946819, guid: 40a5f40e70d713f43bcafd0d6debb854,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a5f40e70d713f43bcafd0d6debb854, type: 3}
 --- !u!1001 &306905347

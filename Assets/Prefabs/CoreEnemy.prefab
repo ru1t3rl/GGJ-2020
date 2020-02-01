@@ -116,6 +116,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   col: {fileID: 0}
   deathParticlees: {fileID: 7617844721368946819}
+  disabled: 0
 --- !u!54 &-6324121869999728325
 Rigidbody:
   m_ObjectHideFlags: 0
