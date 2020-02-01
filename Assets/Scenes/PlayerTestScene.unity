@@ -544,7 +544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680960066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4999722, y: 1.11, z: -1.3248105}
+  m_LocalPosition: {x: 1.4999722, y: 1, z: -1.3248105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1442644134}
@@ -564,15 +564,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1442644133}
-  playerSpeedParallel: 0
-  playerSpeedLateral: 0
-  accelerationX: 0
-  accelerationY: 0
   rotationSpeed: 0.7
   accelerationFactor: 1
   speedNullifyThreshold: 0.001
+  playerSpeedParallel: 0
+  playerSpeedHeight: 0
+  playerSpeedLateral: 0
+  accelerationX: 0
+  accelerationY: 0
+  accelerationZ: 0
   moveDirection: {x: 0, y: 0, z: 0}
   rotationDirection: {x: 0, y: 0, z: 0}
+  jumpingPower: 20
 --- !u!143 &1680960072
 CharacterController:
   m_ObjectHideFlags: 0
