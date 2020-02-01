@@ -53,10 +53,13 @@ public class Core_Enemy : MonoBehaviour
 
     public virtual void MoveObject()
     {
-        TrackTarget(_target);
-        //Truncate(ref velocity, maxSpeed);
-        velocity = velocity.normalized * maxSpeed;
-        this.gameObject.transform.position += velocity * Time.deltaTime;
+        if (_target != null)
+        {
+            TrackTarget(_target);
+            //Truncate(ref velocity, maxSpeed);
+            velocity = velocity.normalized * maxSpeed;
+            this.gameObject.transform.position += velocity * Time.deltaTime;
+        }
     }
 
     public virtual void TakeDamage(float _damage)
