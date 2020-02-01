@@ -72,6 +72,7 @@ public class Bullet : MonoBehaviour
         {
             if (other.GetComponent<Core_Enemy>() != null) {
                 other.GetComponent<Core_Enemy>().TakeDamage(20);
+                parent.GetComponent<Gun>().pl.AddScore(20);
             }
         }
     }

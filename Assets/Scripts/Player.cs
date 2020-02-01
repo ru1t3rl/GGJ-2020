@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         health -= damage;
         if(health <= 0)
         {
-            Debug.Log("Open nieuw scene");
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
         }
     }
 

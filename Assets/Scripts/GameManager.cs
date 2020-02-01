@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] List<int> enemiesInWave = new List<int>();
     int currentWave = 0;
+
+    [SerializeField] TextMeshProUGUI warning;
+    Coroutine warn;
+    [SerializeField] float warningDuration;
 
     void Awake()
     {
@@ -90,6 +95,21 @@ public class GameManager : MonoBehaviour
             PickEnemy();
         else
             activeEnemy.Add(enemies[rIndex]);
+    }
+
+    public void ShowWarning(string warning)
+    {
+        this.warning.gameObject.SetActive(true);
+        this.warning.text = warning;
+
+        StopCoroutine(warn);
+        warn = StartCoroutine(Warn());
+    }
+
+    public IEnumerator Warn()
+    {
+        yield return new WaitForSeconds(warningDuration);
+        warning.gameObject.SetActive(false);
     }
 
     public static GameObject Player { get => sPlayer; }
