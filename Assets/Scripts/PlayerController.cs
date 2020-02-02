@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Jump Mechanic
-        if (!isJumping && Input.GetKeyDown(KeyCode.F))
+        if (!isJumping && Input.GetKeyDown(KeyCode.Space))
         {
             playerSpeed.y = jumpingPower;
             isJumping = true;

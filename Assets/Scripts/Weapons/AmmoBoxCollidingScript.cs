@@ -45,6 +45,8 @@ public class AmmoBoxCollidingScript : MonoBehaviour
                 components.SetActive(false);
             }
 
+            Debug.Log(other.GetComponent<Player>().Ammo);
+            AmmoPickupAmount.text = "+"+(100 - other.GetComponent<Player>().gun.Ammo).ToString() ;
             AudioManager.Instance.PlaySFX(PickupSFX);
             other.GetComponent<Player>().gun.Reload();
 

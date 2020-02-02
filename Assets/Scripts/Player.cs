@@ -60,5 +60,7 @@ public class Player : MonoBehaviour
             return iets;
         }
     }
+
+    public int Ammo { get => System.Convert.ToInt32(scoreObject.text); }
 }
 

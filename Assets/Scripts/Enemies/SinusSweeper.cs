@@ -85,8 +85,10 @@ public class SinusSweeper : MonoBehaviour
     {
         GetComponent<Collider>().enabled = false;
         GetComponent<Renderer>().enabled = false;
-        
+
+        GetComponent<ScreenShake>().Shake();
         explision.Play();
+        AudioManager.Instance.PlaySFX(deathSound, 1f);
 
         yield return new WaitForSeconds(1);
 
@@ -105,6 +107,8 @@ public class SinusSweeper : MonoBehaviour
         GetComponent<Renderer>().enabled = false;
         GetComponent<SphereCollider>().radius = explosionRange;
         explision.Play();
+        GetComponent<ScreenShake>().Shake();
+        AudioManager.Instance.PlaySFX(deathSound, 1f);
 
         yield return new WaitForSeconds(1);
         GetComponent<Collider>().enabled = true;

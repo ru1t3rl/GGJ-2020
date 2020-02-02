@@ -33,7 +33,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] float warningDuration;
     [SerializeField] GameObject warnObject;
 
+    [SerializeField] List<GameObject> ammoBoxes;
+    [SerializeField] float spawnCooldown;
+
+    float time2spawn;
+    [SerializeField] Gun gun;
+
+    [SerializeField] float maxOutAmmoTime = 10;
+
     public static Player pl;
+    System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
+    public float toLowTime;
 
     void Awake()
     {
@@ -57,6 +67,11 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
 
         LoadEnemies();
+
+        foreach (GameObject gobj in ammoBoxes)
+            gobj.SetActive(false);
+
+        time2spawn = Time.time + time2spawn;
     }
 
     void Update()
@@ -71,12 +86,46 @@ public class GameManager : MonoBehaviour
             allDead = true;
 
         doSomething();
+
+        if (Time.time >= time2spawn)
+        {
+            Spawn();
+            time2spawn = Time.time + spawnCooldown;
+        }
+
+        if (gun.Ammo <= 0)
+        {
+            if (!watch.IsRunning)
+            {
+                watch.Start();
+                toLowTime = Time.time + maxOutAmmoTime;
+            }
+            else if (Time.time >= toLowTime && watch.IsRunning)
+            {
+                LeaderBoard_Backend.player = gun.transform.parent.parent.GetComponent<Player>();
+                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+            }
+        }
+        else
+        {
+            if (watch.IsRunning)
+            {
+                watch.Stop();
+                watch.Reset();
+            }
+        }
+    }
+
+    void Spawn()
+    {
+        int rIndex = Random.Range(0, ammoBoxes.Count);
+        ammoBoxes[rIndex].SetActive(true);
     }
 
     void doSomething()
     {
         if (allDead)
-        {        
+        {
             // Open the new Room
             rooms[currentRoom].DissolveDoor(0);
 
@@ -93,7 +142,7 @@ public class GameManager : MonoBehaviour
                 prev = rooms.Count + prev;
             rooms[prev].Activate(0);
             rooms[prev].Activate(1);
-            
+
 
             AudioManager.Instance.PlaySFX(DoorOpeningSFX, 2);
 

@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 6770076359684719693}
   - component: {fileID: 2069372164719897929}
   - component: {fileID: 5002893367172850765}
+  - component: {fileID: 3069366960681001125}
   m_Layer: 0
   m_Name: Virus 2
   m_TagString: Enemy
@@ -179,7 +180,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f511a266304f3b429d6727d20790097, type: 2}
+  - {fileID: 2100000, guid: 36e4b4d8f48114d41ab82f9499d1c087, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,13 +234,28 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
   range: 50
-  explosionRange: 3
+  explosionRange: 1
   damage: 40
   explision: {fileID: 8494332829338814227}
   minExploDistance: 5
-  deathSound: {fileID: 8300000, guid: 4b89ebd3867e4b14a8262c66d0cd7735, type: 3}
+  deathSound: {fileID: 8300000, guid: 5479ed3b6e24f3f44995991fce9a7e88, type: 3}
   exploded: 0
   mats:
-  - {fileID: 2100000, guid: 7f511a266304f3b429d6727d20790097, type: 2}
+  - {fileID: 2100000, guid: 36e4b4d8f48114d41ab82f9499d1c087, type: 2}
   - {fileID: 2100000, guid: e9117f7f69133e24b80371d65c0d91d5, type: 2}
   points: 100
+--- !u!114 &3069366960681001125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687390592868306711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108bd162b766491439f51bbf8d43b338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToShake: {fileID: 0}
+  shakeDuration: 0.75
+  maxShake: {x: 0.01, y: 0.01, z: 0.01}
