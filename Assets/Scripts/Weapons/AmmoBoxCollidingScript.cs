@@ -15,14 +15,16 @@ public class AmmoBoxCollidingScript : MonoBehaviour
     public float upTime;
     public float speed;
 
-    [SerializeField] private Renderer rend;
-    [SerializeField] private Collider col;
+    Renderer rend;
+    Collider col;
+
+    [SerializeField] GameObject child;
 
     [SerializeField] private GameObject[] AmmoBox;
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = child.GetComponent<Renderer>();
         col = GetComponent<Collider>();
 
         gameObject.SetActive(true);
@@ -36,8 +38,7 @@ public class AmmoBoxCollidingScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            rend.enabled = false;
-            col.enabled = false;
+            child.SetActive(false);
 
             foreach (GameObject components in AmmoBox)
             {

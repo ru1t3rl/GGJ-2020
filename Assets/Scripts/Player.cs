@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
+            LeaderBoard_Backend.player = this;
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(2);
         }
     }
 
@@ -44,6 +45,20 @@ public class Player : MonoBehaviour
             iets = "0" + iets;
         }
         scoreObject.text = iets;
+    }
+
+    public string Score
+    {
+        get
+        {
+            string iets = score.ToString();
+            int d = 4 - iets.Length;
+            for (int i = 0; i < d; i++)
+            {
+                iets = "0" + iets;
+            }
+            return iets;
+        }
     }
 }
 
