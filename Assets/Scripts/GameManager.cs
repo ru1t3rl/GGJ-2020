@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI warning;
     Coroutine warn;
     [SerializeField] float warningDuration;
+    [SerializeField] GameObject warnObject;
 
     public static Player pl;
 
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
             {
                 enemies.Add(Instantiate(enemyTypes[iType]));
                 enemies[enemies.Count - 1].SetActive(false);
+                enemies[enemies.Count - 1].hideFlags = HideFlags.HideInHierarchy;
             }
         }
 
@@ -128,7 +130,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowWarning(string warning)
     {
-        this.warning.gameObject.SetActive(true);
+        warnObject.SetActive(true);
         this.warning.text = warning;
 
         try { StopCoroutine(warn); } catch (System.NullReferenceException) { }
@@ -138,7 +140,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator Warn()
     {
         yield return new WaitForSeconds(warningDuration);
-        warning.gameObject.SetActive(false);
+        warnObject.gameObject.SetActive(false);
     }
 
     public static GameObject Player { get => sPlayer; }
