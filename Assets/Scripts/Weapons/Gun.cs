@@ -12,6 +12,9 @@ public class Gun : MonoBehaviour
 
     [SerializeField] float force;
     [SerializeField] private AudioClip FiringSound;
+    [SerializeField] float framesBreak;
+    [SerializeField] float bulletTimeOut = 0.1f;
+    float time2Shoot = 0;
     [SerializeField] GameManager gm;
     [SerializeField] private VisualEffect muzzleflash;
 
@@ -39,16 +42,11 @@ public class Gun : MonoBehaviour
 
     public virtual void Update()
     {
+        if (Input.GetButton("Fire1") && Time.time >= time2Shoot )
         if (!PauseMenuScript.Paused)
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                Shoot();
-            }
-            else if (Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-            }
+            time2Shoot = Time.time + bulletTimeOut;
+            Shoot();
         }
     }
 

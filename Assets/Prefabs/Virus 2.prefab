@@ -233,7 +233,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
   range: 50
-  explosionRange: 15
+  explosionRange: 5
   damage: 40
   explision: {fileID: 8494332829338814227}
   minExploDistance: 5
