@@ -14,8 +14,7 @@ public class AmmoBoxCollidingScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            Debug.Log("AMMMMOOOOOO");
+        { 
             AudioManager.Instance.PlaySFX(PickupSFX);
             other.GetComponent<Player>().gun.Reload();
             gameObject.SetActive(false);

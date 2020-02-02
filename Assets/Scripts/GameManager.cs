@@ -59,9 +59,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        rooms[currentRoom].passed = allDead;
-        doSomething();
-
         for (int iGobj = activeEnemy.Count; iGobj-- > 0;)
         {
             if (!activeEnemy[iGobj].activeSelf)
@@ -70,19 +67,31 @@ public class GameManager : MonoBehaviour
 
         if (activeEnemy.Count <= 0)
             allDead = true;
+
+        doSomething();
     }
 
     void doSomething()
     {
         if (allDead)
-        {
-            currentRoom = (currentRoom < rooms.Count - 1) ? currentRoom + 1 : 0;
-            int prevRoom = currentRoom - 2;
-            if (prevRoom < 0)
-                prevRoom = prevRoom + (rooms.Count - 1);
+        {        
+            // Open the new Room
+            rooms[currentRoom].DissolveDoor(0);
 
-            rooms[prevRoom].door[0].SetActive(true);
-            rooms[prevRoom].door[1].SetActive(true);
+            if (currentRoom < rooms.Count - 1)
+                currentRoom++;
+            else
+                currentRoom = 0;
+
+            rooms[currentRoom].TurnOff(1);
+
+            // Close a hall way
+            int prev = currentRoom - 2;
+            if (prev < 0)
+                prev = rooms.Count + prev;
+            rooms[prev].Activate(0);
+            rooms[prev].Activate(1);
+            
 
             AudioManager.Instance.PlaySFX(DoorOpeningSFX, 2);
 
