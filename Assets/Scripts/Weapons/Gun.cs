@@ -15,9 +15,17 @@ public class Gun : MonoBehaviour
     [SerializeField] float framesBreak;
     [SerializeField] float bulletTimeOut = 0.1f;
     float time2Shoot = 0;
+    [SerializeField] GameManager gm;
+    [SerializeField] private VisualEffect muzzleflash;
+
+    public float damage;
+
+    public Player pl;
 
     public virtual void Start()
     {
+        muzzleflash.Stop();
+
         Cursor.visible = false;
         bullets = new List<Bullet>();
         for (int iBullet = 0; iBullet < maxBullets; iBullet++)
@@ -35,13 +43,10 @@ public class Gun : MonoBehaviour
     public virtual void Update()
     {
         if (Input.GetButton("Fire1") && Time.time >= time2Shoot )
+        if (!PauseMenuScript.Paused)
         {
             time2Shoot = Time.time + bulletTimeOut;
             Shoot();
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reload();
         }
     }
 
@@ -49,7 +54,7 @@ public class Gun : MonoBehaviour
     {
         if (currentBullet < maxBullets)
         {
-            bullets[currentBullet].position = transform.position;
+            bullets[currentBullet].position = transform.position + transform.forward * (transform.localScale.z / 2);
             bullets[currentBullet].direction = Camera.main.transform.forward;
             bullets[currentBullet].rotation = transform.rotation;
 
@@ -57,11 +62,11 @@ public class Gun : MonoBehaviour
 
             currentBullet++;
 
-            //AudioManager.Instance.SetSFXVolume(0.01f);
-            AudioManager.Instance.PlaySFX(FiringSound, 0.01f);
+            muzzleflash.Play();
+            AudioManager.Instance.PlaySFX(FiringSound, 0.1f);
         }
         else
-            Debug.LogError("Out of Ammo");
+            gm.ShowWarning("Out of Ammo");
     }
 
     public int Ammo { get => maxBullets - currentBullet; }

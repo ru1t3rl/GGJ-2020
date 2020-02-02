@@ -5,7 +5,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     [HideInInspector] public bool passed;
-    [SerializeField] GameObject[] door;
+    public GameObject[] door;
     [SerializeField] float dissolveSpeed;
     bool dissolving;
     Renderer rend;

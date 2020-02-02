@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
         this.transform.position += direction.normalized * speed * Time.fixedDeltaTime;
         speed /= drag;
 
-        if(speed <= 0.5f && !disabling)
+        if (speed <= 0.5f && !disabling)
         {
             gameObject.SetActive(false);
         }
@@ -70,8 +70,15 @@ public class Bullet : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            if (other.GetComponent<Core_Enemy>() != null) {
-                other.GetComponent<Core_Enemy>().TakeDamage(20);
+            if (other.GetComponent<Core_Enemy>() != null)
+            {
+                other.GetComponent<Core_Enemy>().TakeDamage(parent.GetComponent<Gun>().damage);
+                parent.GetComponent<Gun>().pl.AddScore(other.gameObject.GetComponent<Core_Enemy>().scoreWorth);
+            }
+            else if (other.GetComponent<SinusSweeper>() != null)
+            {
+                other.GetComponent<SinusSweeper>().DoDamage(parent.GetComponent<Gun>().damage);
+                parent.GetComponent<Gun>().pl.AddScore(other.gameObject.GetComponent<SinusSweeper>().points);
             }
         }
     }

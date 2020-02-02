@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    int score;
-    float health;
+    int score = 0;
+    float health = 100;
 
     [SerializeField] TextMeshProUGUI ammo;
     public Gun gun;
@@ -20,16 +20,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        healthObjectRed.transform.localScale = new Vector3(healthObjectGreen.transform.localScale.x * (health/100), healthObjectRed.transform.localScale.y, healthObjectRed.transform.localScale.z);
+        healthObjectGreen.transform.localScale = new Vector3(healthObjectRed.transform.localScale.x * (health / 100), healthObjectGreen.transform.localScale.y, healthObjectGreen.transform.localScale.z);
+        healthText.text = health.ToString();
         ammo.text = gun.Ammo.ToString();
     }
 
     public void DoDamage(float damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
-            Debug.Log("Open nieuw scene");
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
         }
     }
 
@@ -45,3 +46,4 @@ public class Player : MonoBehaviour
         scoreObject.text = iets;
     }
 }
+

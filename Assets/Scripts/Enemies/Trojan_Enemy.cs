@@ -53,9 +53,9 @@ public class Trojan_Enemy : Core_Enemy
     {
         if (_target != null && !disabled)
         {
-            float distance = Vector3.Distance(gameObject.transform.position, _target.transform.position);
+            float distance = Vector3.SqrMagnitude(gameObject.transform.position + _target.transform.position);
 
-            if (distance <= 1.5f)
+            if (distance <= 1.5f * 1.5f)
             {
                 gameObject.SetActive(false);
             }
